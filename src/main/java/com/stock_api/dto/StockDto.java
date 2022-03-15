@@ -3,8 +3,6 @@ package com.stock_api.dto;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.sql.Timestamp;
-
 @Getter
 @Setter
 public class StockDto {
