@@ -17,11 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class BackStockApplication {
 
-	@GetMapping("/")
-	public String welcome2user(Principal principal) {
-		return "Hi " + principal.getName() + " Welcome to javatech";
-	}
-
 	public static void main(String[] args) {
 		SpringApplication.run(BackStockApplication.class, args);
 	}
