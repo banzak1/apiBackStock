@@ -9,8 +9,6 @@ import com.stock_api.repository.StocksRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-//import org.springframework.web.bind.annotation.controller;
-
 @RestController
 
 public class StockController {

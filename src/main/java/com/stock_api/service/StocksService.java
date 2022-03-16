@@ -12,8 +12,8 @@ import java.util.List;
 public class StocksService {
     private final StocksRepository repository;
 
-    public List<Stocks> getStock(String stock_name) throws Exception {
-        List<Stocks> stocks = repository.findByName(stock_name);
-        return stocks;
+    public List<Stocks> getStock(String stockName) {
+        return repository.findByName(stockName);
+
     }
 }
