@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin("http://localhost:8080")
 @RestController
 public class ChartController {
     @Autowired
