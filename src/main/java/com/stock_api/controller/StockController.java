@@ -22,7 +22,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-@CrossOrigin
+@CrossOrigin(origins = { "http://localhost:8080/", "http://localhost:8082/" })
 @RestController
 public class StockController {
 
