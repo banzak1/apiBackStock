@@ -3,17 +3,20 @@ package com.stock_api.model;
 import java.sql.Timestamp;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.CreationTimestamp;
+
 import org.hibernate.annotations.UpdateTimestamp;
 
 import lombok.Data;
 
 @Data
+@Entity
 @Table(name = "stocks")
 public class Stocks {
 
@@ -32,10 +35,11 @@ public class Stocks {
     private Double bidMin;
     @Column(name = "bid_max")
     private Double bidMax;
-    @Column(name = "created_on")
+
     @CreationTimestamp
-    private Timestamp createdOn;
+    @Column(name = "created_on")
+    private Timestamp created;
     @UpdateTimestamp
     @Column(name = "updated_on")
-    private Timestamp updatedOn;
+    private Timestamp updated;
 }
