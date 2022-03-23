@@ -49,7 +49,7 @@ public class StockController {
         try {
             return ResponseEntity.ok().body(service.getStock(stockName));
         } catch (Exception e) {
-            if (e.getMessage().equals("FAZENDA_NOT_FOUND"))
+            if (e.getMessage().equals("STOCK_NOT_FOUND"))
                 return ResponseEntity.notFound().build();
             return ResponseEntity.badRequest().build();
         }
@@ -57,14 +57,14 @@ public class StockController {
 
     private List<SseEmitter> emitters = new CopyOnWriteArrayList<>();
 
-    @GetMapping(value = "/temporeal")
-    public SseEmitter temporeal(HttpServletResponse response) {
+    @GetMapping(value = "/realtime")
+    public SseEmitter realtime(HttpServletResponse response) {
         response.setHeader("Cache_Control", "no-store");
         SseEmitter sseEmitter = new SseEmitter(Long.MAX_VALUE);
         try {
             emitters.add(sseEmitter);
         } catch (Exception e) {
-            logger.error("Nao deu certo o tempo real");
+            logger.error("Not work");
         }
         sseEmitter.onCompletion(() -> emitters.remove(sseEmitter));
         return sseEmitter;
