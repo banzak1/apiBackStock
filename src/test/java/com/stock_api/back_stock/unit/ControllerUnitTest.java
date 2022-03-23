@@ -16,7 +16,7 @@ import org.springframework.http.HttpStatus;
 
 @WebMvcTest
 @RequiredArgsConstructor
-public class ControllerUnitTest {
+class ControllerUnitTest {
     @Autowired
     private StockController stockController;
     @MockBean
